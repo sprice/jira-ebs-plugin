@@ -1,0 +1,27 @@
+<atlassian-plugin key="com.ikeen.jira.plugin.report.ebs" name="JIRA Evidence Based Scheduling Plugin">
+    <plugin-info>
+        <description>Evidence Based Scheduling Plugin</description>
+        <version>0.01</version>
+        <application-version min="3.0" max="3.0"/>
+        <vendor name="IKEEN Group" url="http://www.ikeen.com"/>
+    </plugin-info>
+
+    <report key="ebsreport" name="Evidence Based Scheduling Report" class="com.ikeen.jira.plugin.report.ebs.ebsreport.EbsReport">
+        <description key="report.ebs.description">i18n description</description>
+        <label key="report.ebs.label" />
+
+        <resource type="velocity" name="view" location="templates/ebsreport/ebs-report.vm" />
+        <resource type="i18n" name="i18n" location="com.ikeen.jira.plugin.reports.ebs.ebsreport.ebs_report" />
+
+        <properties>
+            <property>
+                <key>versionId</key>
+                <name>report.ebs.versionid.name</name>
+                <description>report.ebs.versionid.description</description>
+                <type>select</type>
+                <values class="com.atlassian.jira.portal.VersionValuesGenerator"/>
+            </property>
+        </properties>
+    </report>
+
+</atlassian-plugin>
